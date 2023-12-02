@@ -11,7 +11,7 @@ module.exports = {
         'plugin:@typescript-eslint/recommended', // ts 官方
         'plugin:vue/vue3-recommended' // vue 官方
     ],
-    parser: 'vue-eslint-parser',
+    'parser': 'vue-eslint-parser',
     'parserOptions': {
         'parser': '@typescript-eslint/parser',
         'ecmaVersion': 'latest',

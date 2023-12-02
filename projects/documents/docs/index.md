@@ -2,28 +2,24 @@
 layout: home
 
 hero:
-  name: ninaba23 的文档
-  text: 随便写点啥
-  tagline: To be better!
+  name: nianba23 FE
+#   text: Don’t forget the lessons in the dark
+  tagline: Your time will come
   image:
-    src: /run.jfif
-    alt: keep run
+    src: /run.png
   actions:
     - theme: brand
-      text: 快来快来
-      link: /guild/
-    - theme: alt
       text: View on Github
       link: https://github.com/nianba23
 
 features:
-  - icon: ⚡️
-    title: 这是一个闪电图标
-    details: xxxxxxxx
-  - icon: 🖖
-    title: 这是一个手掌图标
-    details: xxxxxxxx
-  - icon: 🛠️️
-    title: 这是一个修理图标
-    details: xxxxxxxx
+#   - icon: ⚡️
+  - title: By yourself
+    details: Be a better version of yourself.
+#   - icon: 🖖
+  - title: Progress not perfection
+    details: Always do your best. What you plant now, you will harvest later.
+#   - icon: 🛠️️
+  - title: Love yourself first
+    details: Love yourself first and everything else falls into line.
 ---

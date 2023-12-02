@@ -15,3 +15,16 @@ vitepress 搭建的文档站点
 也可以执行官网提供的 `deploy.sh` 脚本文件快速发布
 也可以通过持续集成的配置，每次 push 代码时自动运行脚本
 4. 访问 `https://<username>.github.io/` 即可看到效果
+
+
+### 目录
+
+- 文档
+  - git 教程
+  - vitepress 教程
+
+- 基建
+  - eslint
+  - husky+lint-staged
+  - nvm 教程
+  - npm workspace
