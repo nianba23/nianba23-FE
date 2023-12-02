@@ -1,0 +1,14 @@
+{
+    "name": "vitepress-doc",
+    "version": "1.0.0",
+    "description": "nianba23's doc",
+    "scripts": {
+        "dev": "vitepress dev docs --host --port 4444",
+        "build": "vitepress build docs",
+        "serve": "vitepress serve docs"
+    },
+    "author": "nianba23",
+    "devDependencies": {
+        "vitepress": "^1.0.0-rc.31"
+    }
+}
