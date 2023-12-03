@@ -34,6 +34,10 @@ export default {
             '/guild/': getGuildSidebar(),
             '/core/': getCoreSidebar(),
         },
+        // 本地搜索，也可以使用 algolia 等插件
+        search: {
+            provider: 'local',
+        },
     },
 }
 

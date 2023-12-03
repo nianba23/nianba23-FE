@@ -5,3 +5,4 @@ lib
 packages/eslint-config
 packages/github-ids
 packages/utils
+packages/webpack-config

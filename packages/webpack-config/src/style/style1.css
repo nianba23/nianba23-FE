@@ -1,0 +1,7 @@
+body {
+    background-color: #ccc;
+}
+
+p {
+    transform: rotate(-45deg);
+}
