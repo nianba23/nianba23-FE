@@ -1,6 +1,47 @@
 'use strict';
 
 /**
+ * 防抖
+ * @param fn 
+ * @param wait 
+ * @returns 
+ */
+export function debounce(fn: Function, wait: number) {
+    let timer: NodeJS.Timeout | null = null;
+    return function() {
+        // @ts-ignore
+        const context = this;
+        const args = [...arguments];
+        if (timer) {
+            clearTimeout(timer);
+            timer = null;
+        }
+        timer = setTimeout(() => {
+            fn.apply(context, args);
+        }, wait);
+    };
+}
+/**
+ * 节流
+ * @param fn 
+ * @param wait 
+ * @returns 
+ */
+export function throttle(fn: Function, wait: number) {
+    let timer: NodeJS.Timeout | null = null;
+    return function() {
+        // @ts-ignore
+        const context = this;
+        const args = [...arguments];
+        if (!timer) {
+            timer = setTimeout(() => {
+                fn.apply(context, args);
+            }, wait);
+        }
+    };
+}
+
+/**
  * 深度合并对象
  * @param target 
  * @param sources 
