@@ -56,6 +56,14 @@
 
 在 docs 目录下创建一个 `.vitepress` 文件夹，在其中创建 `config.js` 文件
 
+注意：ESM 文件无法通过 require 加载，当通过 require 导入仅 ESM 的包时，会发生以下错误
+> Failed to resolve "foo". This package is ESM only but it was tried to load by require.
+> "foo" resolved to an ESM file. ESM file cannot be loaded by require.
+
+可以通过以下任一方式将您的配置转换为 ESM：
+> adding "type": "module" to the nearest package.json
+renaming vite.config.js/vite.config.ts to vite.config.mjs/vite.config.mts
+
 此时文件结构为：
 ```
 ├── docs

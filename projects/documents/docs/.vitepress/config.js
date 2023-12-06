@@ -1,45 +1,54 @@
-export default {
-    title: 'nianba23', // 站点标题
-    description: 'nianba23 doc', // meta 标签描述
-    themeConfig: {
-        // 左上角 logo 和 title
-        siteTitle: 'nianba23',
-        logo: '/logo.jpg',
-        // 社交链接
-        socialLinks: [{ icon: "github", link: "https://github.com/nianba23", }],
-        // 上方右侧导航
-        nav: [
-            { text: '文档', link: '/guild/', activeMatch: '^/guild/' },
-            { text: '基建', link: '/core/', activeMatch: '^/core/' },
-            // {
-            //     text: 'Drop Menu',
-            //     items: [
-            //         { text: 'Item 1', link: '/guild/drop-menu/item-1' },
-            //         { text: 'Item 2', link: '/guild/drop-menu/item-2' },
-            //         {
-            //             items: [
-            //                 { text: "Item 11", link: "/guild/drop-menu/item-1" },
-            //             ],
-            //         },
-            //         {
-            //             items: [
-            //                 { text: "Item 22", link: "/guild/drop-menu/item-2" },
-            //             ],
-            //         },
-            //     ],
-            // },
-        ],
-        // 侧边栏，包含 key 路径的才会出现侧边栏
-        sidebar: {
-            '/guild/': getGuildSidebar(),
-            '/core/': getCoreSidebar(),
+import { defineConfig } from "vitepress";
+import { withMermaid } from "vitepress-plugin-mermaid";
+
+export default withMermaid(
+    defineConfig({
+        title: 'nianba23', // 站点标题
+        description: 'nianba23 doc', // meta 标签描述
+        themeConfig: {
+            // 左上角 logo 和 title
+            siteTitle: 'nianba23',
+            logo: '/logo.jpg',
+            // 社交链接
+            socialLinks: [{ icon: "github", link: "https://github.com/nianba23", }],
+            // 上方右侧导航
+            nav: [
+                { text: '文档', link: '/guild/', activeMatch: '^/guild/' },
+                { text: '基建', link: '/core/', activeMatch: '^/core/' },
+                // {
+                //     text: 'Drop Menu',
+                //     items: [
+                //         { text: 'Item 1', link: '/guild/drop-menu/item-1' },
+                //         { text: 'Item 2', link: '/guild/drop-menu/item-2' },
+                //         {
+                //             items: [
+                //                 { text: "Item 11", link: "/guild/drop-menu/item-1" },
+                //             ],
+                //         },
+                //         {
+                //             items: [
+                //                 { text: "Item 22", link: "/guild/drop-menu/item-2" },
+                //             ],
+                //         },
+                //     ],
+                // },
+            ],
+            // 侧边栏，包含 key 路径的才会出现侧边栏
+            sidebar: {
+                '/guild/': getGuildSidebar(),
+                '/core/': getCoreSidebar(),
+            },
+            // 本地搜索，也可以使用 algolia 等插件
+            search: {
+                provider: 'local',
+            },
+            footer: {
+                message: '',
+                copyright: 'MIT Licensed | Copyright © 2023-present nianba23 FE'
+            },
         },
-        // 本地搜索，也可以使用 algolia 等插件
-        search: {
-            provider: 'local',
-        },
-    },
-}
+    })
+)
 
 function getGuildSidebar() {
     return [
@@ -48,6 +57,7 @@ function getGuildSidebar() {
             items: [
                 { text: 'Git', link: '/guild/git' },
                 { text: 'vitepress', link: '/guild/vitepress' },
+                { text: 'Mermaid', link: '/guild/mermaid' },
             ],
         },
         {

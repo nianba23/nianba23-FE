@@ -6,7 +6,6 @@ Mermaid 是一款文本驱动图表的工具，可以用简单的文本来描述
 Mermaid 可以作为一个 JavaScript 库使用，也可以作为一个命令行工具使用。
 使用 Mermaid，可以轻松地在文本编辑器中编写图表定义，而无需使用专业的图表工具或图形用户界面。
 
-
 ## 如何使用 Mermaid
 
 - 在 HTML 或 Markdown 文件中引用 Mermaid 库和 Mermaid CSS 样式表。
@@ -120,6 +119,29 @@ classDiagram
     + bark(): void
   }
   Animal <|-- Dog
+```
+
+注意：要在 vitepress 中集成 Mermaid 图表，需要安装`vitepress-plugin-mermaid`和`mermaid`插件，以及在 `.vitepress/config.js` 中进行配置。
+
+```bash
+npm install vitepress-plugin-mermaid mermaid -D
+```
+
+```js
+// .vitepress/config.js
+import { defineConfig } from "vitepress";
+import { withMermaid } from "vitepress-plugin-mermaid";
+
+export default withMermaid(
+  defineConfig({
+    // your existing vitepress config...
+
+    // optionally, you can pass MermaidConfig
+    mermaid: {
+      // ...
+    },
+  })
+);
 ```
 
 更多内容，推荐阅读 [Mermaid 官方文档](https://mermaid.js.org/)
