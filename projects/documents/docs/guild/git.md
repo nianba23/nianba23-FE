@@ -41,6 +41,9 @@
 ## git commit
 - git commit -m "Commit message" 将提交暂存区的所有更改附带一条信息进行提交
 
+## git remote
+- git remote add origin repositoryUrl 关联远程仓库
+
 ## git push
 - git push origin branchName 将本地分支推送到远程分支
 - git push -u origin branchName 将本地分支推送到远程仓库，并将远程分支设置为相同名称
