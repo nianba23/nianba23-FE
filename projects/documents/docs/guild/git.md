@@ -90,3 +90,44 @@ git fetch origin pull/{id}/head:{branchname}
 
 - id: PR 的id
 - branchname: 你本地创建的新分支的名称
+
+## Macos 上配置 SSH key
+
+1. 检查是否已经有 ssh
+
+```
+ls -al ~/.ssh
+```
+
+如果已经有 SSH 可以看到类似 id_rsa 等文件
+
+2. 如果没有 SSH key，可以执行以下命令生成
+
+```
+ssh-keygen -t rsa -b 4096 -C "<your_email>"
+```
+
+3. 添加 SSH 到 SSH Agent
+
+```
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+```
+
+4. 复制 SSH
+
+```
+pbcopy < ~/.ssh/id_rsa.pub
+```
+
+5. 添加 SSH 到 GitHub
+
+在 GitHub 的个人设置页面，点击 SSH and GPG keys，然后点击 New SSH key，将刚才复制的 SSH key 粘贴进去，并命名。
+
+6. 测试连接
+
+```
+ssh -T git@github.com
+```
+
+> 我使用的 git 版本管理工具是 Fork，可以 New SSH key 填写 key file name 和 emil 后生成一个新的 SSH key，然后将这个 key 复制到 GitHub 的 SSH key 里。

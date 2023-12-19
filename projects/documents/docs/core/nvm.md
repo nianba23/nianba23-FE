@@ -2,11 +2,10 @@
 
 nvm 是 Node 版本管理器，可以帮助我们更方便地安装和切换 Node.js 版本。
 
-## 安装
+## windows 安装
 
 > 在安装 nvm 之前，需要先将本地的 node 卸载，避免一些莫名其妙的问题，让 nvm 完全接管电脑的 node。删除包括`C:\Users\用户名`文件夹下的`.npmrc`，环境变量中 nvm 相关的配置。
 
-- Mac  [nvm](https://github.com/nvm-sh/nvm)
 - Windows [nvm-windows](https://github.com/coreybutler/nvm-windows/releases)
 
 1. 到官网下载 `nvm-setup.zip` 文件，解压到任意目录，执行 `nvm-setup.exe`
@@ -48,6 +47,56 @@ nvm 管理多个版本的 node，如果每次安装一个 node 版本都要再�
 > 没有配置 NODE_PATH 环境变量，nodejs 会使用默认的模块解析规则来查找模块。默认情况下，nodejs 会查找当前目录下的 node_modules 文件夹，然后逐级向上查找，知道找到根目录未知。如果全局安装了某个模块，而没有配置 NODE_PATH 环境变量，nodejs 可能无法找到这些全局模块，从而导致模块加载失败。
 不过，我们使用 nvm 安装或使用 node 版本时，nvm 会自动设置相关的环境变量，指向全局 npm 下的 node_modules 文件夹，如："D:\Program\nvm\npm\node_modules"，所以不需要再配置 NODE_PATH 环境变量。
 
+## Macos 安装
+
+〉 同样保证电脑上没有安装过 node 环境，且保证已安装了 git（可以参考使用XCode、使用brew、官网下载安装包）。
+如果安装了 node，则彻底删除 `sudo rm -rf /usr/local/{bin/{node,npm},lib/node_modules/npm,lib/node,share/man/*/node.*}`
+
+- Mac  [nvm](https://github.com/nvm-sh/nvm)
+
+1. 下载 nvm 安装脚本
+    ```
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+    ```
+    其中 v.0.39.0 是版本号，如果需要安装其他版本，可以替换 v0.39.0 为其他版本号
+    如果报错失败或连接不到远程，可以先在 host 文件中配置 `185.199.109.133 raw.githubusercontent.com`
+    正常安装成功后会自动在全局配置文件中配置好相应的环境变量，如果不可以的话在参考下面步骤 2、3手动配置环境变量
+2. 配置 .bash_profile
+    ```
+    cd ~/.bash_profile
+    ```
+    然后将下面的配置信息输入到文件
+    ```
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+    ```
+    然后刷新环境变量
+    ```
+    source ~/.bash_profile
+    ```
+3. 配置 .zshrc
+    ```
+    cd ~/.zshrc
+    ```
+    然后将下面的配置信息输入到文件
+    ```
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+    ```
+    然后刷新环境变量
+    ```
+    source ~/.zshrc
+    ```
+4. 查看 nvm 版本
+    ```
+    nvm -v
+    ```
+5. 安装成功后就可正常安装 node
+    ```
+    nvm install 18.17.0
+    ```
 
 ## nvm 常用命令
 
