@@ -61,8 +61,9 @@ function getGuildSidebar() {
             ],
         },
         {
-            text: '踩坑',
+            text: '记录',
             items: [
+                { text: '踩坑', link: '/guild/bug/index' },
                 { text: '软连接', link: '/guild/bug/symLink' },
             ],
         },
