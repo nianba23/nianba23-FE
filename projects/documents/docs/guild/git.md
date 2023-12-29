@@ -1,79 +1,95 @@
 # Git 教程
 
 ## Git 文档
+
 [官方文档](https://git-scm.com/docs)
 
 ## git branch
+
 - git branch 查看本地分支
 - git branch -r 查看远程分支
 - git branch -a 查看本地&远程分支
 - git branch -d xxx 删除本地分支
-- git branch -r | grep main  查看远程的包含 main 的分支
+- git branch -r | grep main 查看远程的包含 main 的分支
 - git branch | grep main | xargs git branch -D 批量删除本地分支
 - git branch -a | grep -v -E 'master|develop' | xargs git branch -D // 只保留 master 等分支
 - git branch -r | grep -v -E 'master|develop' | sed 's/origin\///g' | xargs -I {} git push origin :{}
 - git branch -r | grep 'main' | xargs -I {} basename {} | xargs -I {} git push origin :{} // 批量删除远程分支
-- git remote prune origin  // 刷新一下分支列表
+- git remote prune origin // 刷新一下分支列表
 
 ## git checkout
+
 - git checkout xxx 切换到某个分支
 - git checkout . 放弃本次修改
 - git checkout -b xxx origin/xxx 创建一个和远程分支关联的分支
 - git checkout -b xxx 创建一个新分支
 
-## git merge 
+## git merge
+
 - git merge branchName 将 branchName 分支的更改合并到当前分支
 - git merge --abort 取消上一次合并
 
 ## git clone
+
 - git clone repositoryUrl 克隆远程仓库到当前目录
 - git clone -b branchName repositoryUr 克隆指定分支
 
 ## git pull
+
 - git pull origin branchName 将远程分支拉取到本地当前分支
 - git pull origin branchName --force 强制将远程分支拉取到本地当前分支
 - git pull --rebase origin branchName 将远程分支拉取到本地分支，并在本地分支上执行 rebase 操作
 
 ## git add
+
 - git add . 将所有修改添加到暂存区
 - git add fileName 将指定文件添加到暂存区
 
 ## git commit
+
 - git commit -m "Commit message" 将提交暂存区的所有更改附带一条信息进行提交
 
 ## git remote
+
 - git remote add origin repositoryUrl 关联远程仓库
 
 ## git push
+
 - git push origin branchName 将本地分支推送到远程分支
 - git push -u origin branchName 将本地分支推送到远程仓库，并将远程分支设置为相同名称
 - git push -f origin branchName 强制推送到远程仓库，即使有冲突
 - git push origin --delete branchName 删除远程分支
 
 ## git tag
+
 - git tag -a tagName -m '标签的说明' // -a annotated
 - git push origin tagName // 推送到远程
 
 ## git log
+
 - git log --author=alan // 过滤作者名称
---oneline // 每条记录只显示一行
+  --oneline // 每条记录只显示一行
 
 ## git stash
+
 - git stash save {name}
 - git stash list
-- git stash pop 
+- git stash pop
 - git stash apply {index}
 - git stash drop {index}
 
 ## git reset
+
 - git reset --soft HEAD~1 撤销上一次的提交
 
-## git cherry-pick 
+## git cherry-pick
+
 - git cherry-pick commitId1 commitId2 将其他分支的 commit 摘取过来
 
 ## .gitignore
+
 - 以斜杠“/”开头表示目录
-- 以星号“*”通配多个字符
+- 以星号“\*”通配多个字符
 - 以问号“?”通配单个字符
 - 以方括号“[]”包含单个字符的匹配列表
 - 以叹号“!”表示不忽略(跟踪)匹配到的文件或目录
@@ -82,14 +98,40 @@
 
 ## review pr
 
-如果是简单的功能我们可以直接通过 PR 地址进行review，对于复杂一些的功能，我们应该在本地对功能进行验证。此时可以使用 Git 命令将当前 PR 拉到本地进行验证。
+如果是简单的功能我们可以直接通过 PR 地址进行 review，对于复杂一些的功能，我们应该在本地对功能进行验证。此时可以使用 Git 命令将当前 PR 拉到本地进行验证。
 
 ```
-git fetch origin pull/{id}/head:{branchname} 
+git fetch origin pull/{id}/head:{branchname}
 ```
 
-- id: PR 的id
+- id: PR 的 id
 - branchname: 你本地创建的新分支的名称
+
+## Git 提交规范
+
+良好的 Git 提交日志非常重要，最明显的一点是，它让整个 Git 提交历史的阅读变得非常轻松。
+一眼看上去，就知道每个提交是做了什么，是加了新功能，还是修改了 bug，是维护了文档，还是调整了单元测试，都一目了然。
+
+每个提交的标题是强制的，又具有特殊格式，包括修改类型、影响范围和内容主题。
+每个类型值都表示了不同的含义，类型值必须是以下的其中一个：
+
+- feat：提交新功能
+- fix：修复了 bug
+- docs：只修改了文档
+- style：调整代码格式，未修改代码逻辑（比如修改空格、格式化、缺少分号等）
+- refactor：代码重构，既没修复 bug 也没有添加新功能
+- perf：性能优化，提高性能的代码更改
+- test：添加或修改代码测试
+- chore：对构建流程或辅助工具和依赖库（如文档生成等）的更改
+- revert：回滚某个提交
+
+标题是对提交的最直接最简明的说明，然后在提交的正文中对标题的内容进行补充，说明对提交的详细描述。正文中可以包含：
+
+- 详细描述本次提交的变更范围
+- 为什么提交这次变更，有相关的需求或 issue，可关联相应链接
+- 有其他关联的 pr 可关联相应链接
+- 对于界面样式或交互的修改，可附上截图
+- 对于文档、测试例等关联的修改，可添加勾选项帮助确认同步修改
 
 ## Macos 上配置 SSH key
 

@@ -4,7 +4,7 @@
 
 JSON Schema 是一种声明性语言，可用于注释和验证 JSON 文档的结构、约束和数据类型。它提供了一种标准化和定义 JSON 数据期望的方法。[官网](https://json-schema.org/overview/what-is-jsonschema)
 
-最直观的体验就是我们在 vs code 编写 setting.json 的时候有配置信息的提示和校验。
+最直观的体验就是在 vs code 编写 setting.json 的时候有配置信息的提示和校验。
 
 ## 教程
 
@@ -101,14 +101,14 @@ JSON Schema 是一种声明性语言，可用于注释和验证 JSON 文档的�
 
 ### 使用 JSON Schema
 
-vs code 开箱支持 JSON Schema，我们只需要在 setting.json 中添加 `json.schemas` 字段，然后添加我们定义的 JSON Schema 即可。[官方文档](https://code.visualstudio.com/docs/languages/json)
+vs code 开箱支持 JSON Schema，只需要在 setting.json 中添加 `json.schemas` 字段，然后添加我们定义的 JSON Schema 即可。[官方文档](https://code.visualstudio.com/docs/languages/json)
 
 ```json5
 {
     'json.schemas': [
         {
-            fileMatch: ['cocos.json'],
-            url: './cocos-schema.json', // JSON Schema 的路径 它相对于当前项目的 Root
+            fileMatch: ['nianba23.json'],
+            url: './nianba23-schema.json', // JSON Schema 的路径 它相对于当前项目的 Root
         },
     ],
 }
@@ -118,14 +118,14 @@ vscode 还有一种使用 JSON Schema 的方式，就是在 JSON 文档中添加
 
 ```json5
 {
-    $schema: './cocos-schema.json', // 它也可以是一个在线的地址
-    name: 'cocos',
+    $schema: './nianba23-schema.json', // 它也可以是一个在线的地址
+    name: 'nianba23',
     version: '1.0.0',
-    description: 'Cocos Creator 项目配置',
+    description: 'nianba23 项目配置',
 }
 ```
 
-这样，在 vs code 中打开名为 cocos.json 文件的时候，就会提示我们定义的 JSON Schema。
+这样，在 vs code 中打开名为 nianba23.json 文件的时候，就会提示我们定义的 JSON Schema。
 
 ### 公共 Schema
 
@@ -144,5 +144,3 @@ vscode 还有一种使用 JSON Schema 的方式，就是在 JSON 文档中添加
 ## 总结
 
 使用 [JSON Schema](https://json-schema.org/overview/what-is-jsonschema) 可以减少编写配置文件的工作量，降低配置出错的概率。
-
-如果你是工具开发者，并且你的工具允许用户使用 json 文件来配置一些信息，那么由你提供的 schma 将极大提升用户的配置体验。

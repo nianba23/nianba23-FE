@@ -56,7 +56,7 @@ function getGuildSidebar() {
             text: '文档',
             items: [
                 { text: 'Git', link: '/guild/git' },
-                { text: 'vitepress', link: '/guild/vitepress' },
+                { text: 'VitePress', link: '/guild/vitepress' },
                 { text: 'Mermaid', link: '/guild/mermaid' },
             ],
         },
@@ -64,6 +64,13 @@ function getGuildSidebar() {
             text: '踩坑',
             items: [
                 { text: '软连接', link: '/guild/bug/symLink' },
+            ],
+        },
+        {
+            text: '分享',
+            items: [
+                { text: 'JSON Schema', link: '/guild/share/json-schema' },
+                { text: 'Mac 装机', link: '/guild/share/setup-mac' },
             ],
         }
     ];
