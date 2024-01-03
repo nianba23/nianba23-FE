@@ -205,3 +205,10 @@ git 的提交记录的作者信息是从全局配置或者每个仓库的配置�
 git config --global user.name "nianba"
 git config --global user.email "your@email.com"
 ```
+
+要在不同的 Git 托管平台上使用不同的用户名，可以使用 Git 的本地配置来覆盖全局配置，此时再提交 Git 时将使用该配置中的用户名和电子邮件地址：
+
+```
+git config user.name "yourName"
+git config user.email "your@email.com"
+```
