@@ -172,4 +172,12 @@ pbcopy < ~/.ssh/id_rsa.pub
 ssh -T git@github.com
 ```
 
+7. 如果同时使用多个平台，例如 GitHub 和 Gitlab，可以再为 gitlab 也添加 SSH key。
+
+```
+ssh-keygen -t rsa -C "your_email@example.com"
+```
+
+替换在 gitlab 上注册的邮箱地址，回车后会要求选择一个路径来保存新的密钥，这边定义一个区分 GitHub 的路径，例如：~/.ssh/id_rsa_gitlab。接下来要求输入一个密码短语，可以选择输入密码短语或直接按回车键跳过此步骤。最后生成的公钥和私钥会保存在 ~/.ssh/ 下面。
+
 > 我使用的 git 版本管理工具是 Fork，可以 New SSH key 填写 key file name 和 emil 后生成一个新的 SSH key，然后将这个 key 复制到 GitHub 的 SSH key 里。
