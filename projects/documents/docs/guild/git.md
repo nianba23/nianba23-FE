@@ -180,4 +180,19 @@ ssh-keygen -t rsa -C "your_email@example.com"
 
 替换在 gitlab 上注册的邮箱地址，回车后会要求选择一个路径来保存新的密钥，这边定义一个区分 GitHub 的路径，例如：~/.ssh/id_rsa_gitlab。接下来要求输入一个密码短语，可以选择输入密码短语或直接按回车键跳过此步骤。最后生成的公钥和私钥会保存在 ~/.ssh/ 下面。
 
+在使用 Git 时，可以根据需要选择使用哪个密钥。例如，可以使用 GitLab 的密钥来与 GitLab 进行通信，使用 GitHub 的密钥来与 GitHub 进行通信。
+为了在不同的仓库中使用不同的密钥，您可以通过配置 ~/.ssh/config 文件来指定使用哪个密钥。例如：
+
+```
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa_github
+
+Host gitlab.com
+  HostName gitlab.com
+  User git
+  IdentityFile ~/.ssh/id_rsa_gitlab
+```
+
 > 我使用的 git 版本管理工具是 Fork，可以 New SSH key 填写 key file name 和 emil 后生成一个新的 SSH key，然后将这个 key 复制到 GitHub 的 SSH key 里。
