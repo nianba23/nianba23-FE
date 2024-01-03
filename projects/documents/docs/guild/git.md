@@ -196,3 +196,12 @@ Host gitlab.com
 ```
 
 > 我使用的 git 版本管理工具是 Fork，可以 New SSH key 填写 key file name 和 emil 后生成一个新的 SSH key，然后将这个 key 复制到 GitHub 的 SSH key 里。
+
+8. 配置提交记录信息
+
+git 的提交记录的作者信息是从全局配置或者每个仓库的配置中获取的，可以配置一个全局用户信息，使用 Git 命令提交时，默认情况下会使用全局配置中的用户名和电子邮件地址：
+
+```
+git config --global user.name "nianba"
+git config --global user.email "your@email.com"
+```
