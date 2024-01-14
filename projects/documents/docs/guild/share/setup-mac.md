@@ -4,16 +4,16 @@
 
 ## 软件安装
 
-原生 APP 有的还是非常好用的： 
-- 输入法、
-- 备忘录、
-- 邮件、
-- 日历、
-- 地图、
-- 音乐、
-- 截屏、
-- 提醒事项、
-- keynote、
+原生 APP 有的还是非常好用的：
+- 输入法
+- 备忘录
+- 邮件
+- 日历
+- 地图
+- 音乐
+- 截屏
+- 提醒事项
+- keynote
 - Safari
 建议在安装上：
 - Pages 文稿
@@ -54,3 +54,34 @@ mac 的文件系统和 windows 不同，没有盘符的区分，在安装软件�
 - [HomeBrew](https://brew.sh/zh-cn/) （安装开发软件很实用 如 brew install nginx）[墙内安装脚本](https://gitee.com/cunkai/HomebrewCN)
 - 🪜
 很多软件都是使用国外的，所以几乎是必须准备一个🪜。mac 上推荐使用 [ShadowsocksX](https://github.com/shadowsocks/ShadowsocksX-NG)、[clashX](https://github.com/yichengchen/clashX) 或 Lico
+
+## vscode 插件
+
+- Auto Close Tag
+- Auto Import
+- Auto Rename Tag
+- Chinese Language Pack for Visual Studio Code
+- Code Runner
+- Code Spell Checker
+- Color Info
+- CSS Peek
+- ESLint
+- Git History
+- GitLens
+- GitHub Copilot
+- HTML CSS Support
+- Import Cost
+- ES6 code snippets
+- Less watch
+- Local History
+- JSON
+- JSON to TS
+- open in browser
+- Partial Diff
+- Path Intellisense
+- Project Manager
+- Stylelint
+- Volar
+- vscode-icons
+- Vue VSCode Snippets
+- VueHelper

@@ -12,7 +12,7 @@
         "docs:dev": "npm run dev -w vitepress-doc",
         "docs:build": "npm run build -w vitepress-doc",
         "docs:serve": "npm run serve -w vitepress-doc",
-        "lint:js": "cross-env NODE_ENV=production eslint --fix --ext .js,.ts,.vue",
+        "lint:js": "cross-env NODE_ENV=production eslint --fix --ext .js,.ts,.vue,.tsx",
         "prepare": "husky install"
     },
     "author": "nianba23",

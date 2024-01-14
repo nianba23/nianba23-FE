@@ -70,6 +70,7 @@ function getGuildSidebar() {
         {
             text: '分享',
             items: [
+                { text: 'SVG', link: '/guild/share/svg' },
                 { text: 'JSON Schema', link: '/guild/share/json-schema' },
                 { text: 'Mac 装机', link: '/guild/share/setup-mac' },
             ],
@@ -80,18 +81,18 @@ function getGuildSidebar() {
 function getCoreSidebar() {
     return [
         {
+            text: '开发规范',
+            items: [
+                { text: '前端开发规范', link: '/core/开发规范' },
+                { text: 'ESLint工作流', link: '/core/eslint-工作流' },
+            ],
+        },
+        {
             text: 'npm 相关',
             // collapsed: false, // 默认折叠展开
             items: [
               { text: 'nvm', link: '/core/nvm' },
               { text: 'npm workspace', link: '/core/npm-workspace' },
-            ],
-        },
-        {
-            text: 'Eslint 相关',
-            items: [
-                { text: 'Eslint', link: '/core/eslint' },
-                { text: 'husky', link: '/core/husky' },
             ],
         },
     ];

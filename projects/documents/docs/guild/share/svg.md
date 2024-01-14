@@ -226,4 +226,6 @@ const remove = (index: number) => {
 </style>
 ```
 
+![image](../../assets/share/svg.jpg)
+
 参考：[svg 中 path 贝塞尔曲线和圆弧图文详解](https://juejin.cn/post/7018952717343129607)
