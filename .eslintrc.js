@@ -10,11 +10,12 @@ module.exports = {
         'eslint:recommended', // eslint 官方
         'plugin:@typescript-eslint/recommended', // ts 官方
         'plugin:vue/vue3-recommended' // vue 官方
+        // '@nianba23-fe/eslint-config/onecode'
     ],
     'parser': 'vue-eslint-parser',
     'parserOptions': {
         'parser': '@typescript-eslint/parser',
-        'ecmaVersion': 'latest',
+        'ecmaVersion': 6,
         'sourceType': 'module',
         'ecmaFeatures': {
             'modules': true,
@@ -34,8 +35,8 @@ module.exports = {
             'error',
             'single',
             {
-                avoidEscape: false,
-                allowTemplateLiterals: true,
+                'avoidEscape': false,
+                'allowTemplateLiterals': true,
             },
         ],
     }

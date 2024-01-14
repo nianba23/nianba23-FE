@@ -5,13 +5,10 @@ module.exports = {
         'es2021': true,
         'vue/setup-compiler-macros': true,
     },
-    'globals': {
-        'Editor': 'readonly',
-    },
     'extends': [
         'plugin:vue/vue3-recommended',
         'plugin:@typescript-eslint/recommended',
-        './extend-editor.js',
+        './extend-onecode.js',
     ],
     'parser': 'vue-eslint-parser',
     'parserOptions': {
@@ -27,4 +24,3 @@ module.exports = {
         '@typescript-eslint',
     ],
 };
-

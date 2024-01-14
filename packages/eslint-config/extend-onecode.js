@@ -1,5 +1,5 @@
 const base = require('./src/rule-base.js');
-const editor = require('./src/rule-editor.js');
+const onecode = require('./src/rule-onecode.js');
 
 module.exports = {
     'extends': [
@@ -7,8 +7,7 @@ module.exports = {
     ],
     'rules': {
         ...base.rules,
-        ...editor.rules,
+        ...onecode.rules,
     },
-    overrides: [...editor.overrides],
+    overrides: [...onecode.overrides],
 };
-

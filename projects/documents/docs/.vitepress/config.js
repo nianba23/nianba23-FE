@@ -90,7 +90,7 @@ function getCoreSidebar() {
             text: '开发规范',
             items: [
                 { text: '前端开发规范', link: '/core/开发规范' },
-                { text: 'ESLint工作流', link: '/core/eslint-工作流' },
+                { text: 'ESLint工作流', link: '/core/eslint' },
             ],
         },
         {

@@ -1,8 +1,6 @@
-# Eslint config
+# ESLint config
 
-
-[使用教程](http://cocos.90s.co/core/eslint.html)
-
+[使用教程](https://nianba23.github.io/core/eslint.html)
 
 ## 参考链接
 
@@ -11,12 +9,13 @@
 - [typescritp-eslint](https://typescript-eslint.io/docs/linting/)
 - [vue-eslint-parser](https://www.npmjs.com/package/vue-eslint-parser)
 
-## 备忘
+## 其他
 
 **规则值说明**
-- "off" or   0 - 关闭规则
-- "warn" or  1 - 将规则视为一个警告（不会影响退出码）
-- "error" or 2 - 将规则视为一个错误 (退出码为1)
+
+- "off" 或 0: 表示关闭该规则。ESLint 不会对此规则做任何检查。
+- "warn" 或 "warning" 或 1: 表示开启该规则，但是只发出警告，不会阻止代码的执行。
+- "error" 或 2: 表示开启该规则，并将违反规则的地方视为错误。在代码中存在违规情况时，ESLint 会报告错误并且可能会阻止代码的执行（取决于配置）。
 
 **关闭规则验证**
 - 当前文件： /* eslint-disable no-console */

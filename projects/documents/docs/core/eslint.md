@@ -100,7 +100,7 @@ module.exports = {
 
 ### 区分开发环境和正式环境的规则
 
-ESLint 是为了提升编码规范，而不是影响效率和心情的。所以在开发环境中，规范应当相对宽松，在向上对应 `error` 的规则，在开发中只是 `warn`。哟啊不然会出现例如：声明了一个变量，但是没有使用，在调试时报错了‘你已声明，但未读取’，还得修改后才能正常调试，这非常影响开发体验。
+ESLint 是为了提升编码规范，而不是影响效率和心情的。所以在开发环境中，规范应当相对宽松，在线上对应 `error` 的规则，在开发中只是 `warn`。不然会出现例如：声明了一个变量，但是没有使用，在调试时报错了‘你已声明，但未读取’，还得修改后才能正常调试，这非常影响开发体验。
 
 - dev：在开发时给出 warn 提示，不影响代码正常变编译调试
 - prod：对应标准的规范，保证代码严谨性
@@ -128,8 +128,8 @@ module.exports = {
 
 ## 配置包
 
+我在 `@ninaba23-fe/eslint-config` 中维护了统一的配置文件。
 出于规范约束 & 配置的灵活性，公共配置中只包含 `extends` 和 `rules` 两个配置，其他 `parser` 、`plugins`等一律由具体项目自行配置。
-我在 `@ninaba23-fe/eslint-config` 中维护了统一的配置文件，需要的话在针对不同项目分别暴露独立的扩展配置。
 
 ### 安装
 
@@ -137,19 +137,35 @@ module.exports = {
 npm install @nianba23-fe/eslint-config --save-dev
 ```
 
-如果使用 `vue` 这类非常规后缀的文件，也有一份针对 `vue3` 的扩展配置：
+需要的话在针对不同项目分别暴露独立的扩展配置，例如：onecode
+如果使用 `vue` 这类非常规后缀的文件，也有一份针对 `vue3` 的独立扩展配置：
 
 ```js
 module.exports = {
-  "root": true,
-  "parser": '@typescript-eslint/parser',
-  "plugins": [
-    '@typescript-eslint',
-  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2021": true,
+    'vue/setup-compiler-macros': true
+  },
   "extends": [
+    "plugin:vue/vue3-recommended",
     'plugin:@typescript-eslint/recommended',
-    "@ninaba23-fe/eslint-config/extend",
+    "./extend-onecode.js"
   ],
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    parser: "@typescript-eslint/parser",
+    ecmaVersion: "latest",
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true
+    }
+  },
+  "plugins": [
+    "vue",
+    "@typescript-eslint"
+  ]
 };
 ```
 
