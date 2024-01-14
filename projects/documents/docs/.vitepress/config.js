@@ -74,6 +74,12 @@ function getGuildSidebar() {
                 { text: 'JSON Schema', link: '/guild/share/json-schema' },
                 { text: 'Mac 装机', link: '/guild/share/setup-mac' },
             ],
+        },
+        {
+            text: '组件',
+            items: [
+                { text: '虚拟列表', link: '/guild/components/virtual-list/index' },
+            ],
         }
     ];
 }
