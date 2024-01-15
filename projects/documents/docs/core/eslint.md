@@ -83,7 +83,7 @@ ESLint是一个非常好的编程辅助工具，检测和修复代码中的问�
 - 引入 ESLint 官方推荐的规则
 - 引入 Vue 官方推荐的规则
 - 引入 TS 官方推荐规则
-- 维护一份少量的自有规则，以达到我们的特殊目的
+- 维护一份少量的自有规则，以达到特殊目的规则
 
 ```js
 module.exports = {
@@ -128,7 +128,7 @@ module.exports = {
 
 ## 配置包
 
-我在 `@ninaba23-fe/eslint-config` 中维护了统一的配置文件。
+在 `@ninaba23-fe/eslint-config` 中维护了统一的配置文件。
 出于规范约束 & 配置的灵活性，公共配置中只包含 `extends` 和 `rules` 两个配置，其他 `parser` 、`plugins`等一律由具体项目自行配置。
 
 ### 安装
@@ -251,7 +251,7 @@ husky 一般在终端上可以顺利运行，但使用 git 图形工具时，可
 
 ## 结合 editorConfig
 
-我们可以通过 ESLint 的配置文件来达到项目的`代码校验规则`统一的目的，但是编辑器 vscode 的配置是每个同学本地生效的，无法统一配置，于是需要引入 `EditorConfig` 配合 `vscode` 插件，确保每个成员在本地编辑器的格式一致，不会和 eslint 配置冲突。
+可以通过 ESLint 的配置文件来达到项目的`代码校验规则`统一的目的，但是编辑器 vscode 的配置是每个同学本地生效的，无法统一配置，于是需要引入 `EditorConfig` 配合 `vscode` 插件，确保每个成员在本地编辑器的格式一致，不会和 eslint 配置冲突。
 
 - editorConfig 统一了编码规则
 - eslintConfig 统一了校验规则

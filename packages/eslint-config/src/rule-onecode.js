@@ -28,7 +28,7 @@ module.exports = {
         'consistent-return': 0, // 函数有返回值时，要么指定返回的值，要么不写 return
 
         // ====> https://eslint.vuejs.org/
-        // 模板中美行的最大属性数
+        // 模板中每行的最大属性数
         // 'vue/max-attributes-per-line': [
         //     'error',
         //     {
