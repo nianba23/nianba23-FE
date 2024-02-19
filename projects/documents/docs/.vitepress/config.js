@@ -70,6 +70,7 @@ function getGuildSidebar() {
         {
             text: '分享',
             items: [
+                { text: '设计模式之七大基本原则', link: '/guild/share/basic-principles' },
                 { text: 'SVG', link: '/guild/share/svg' },
                 { text: 'JSON Schema', link: '/guild/share/json-schema' },
                 { text: 'Mac 装机', link: '/guild/share/setup-mac' },
