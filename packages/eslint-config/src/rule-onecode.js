@@ -29,17 +29,17 @@ module.exports = {
 
         // ====> https://eslint.vuejs.org/
         // 模板中每行的最大属性数
-        // 'vue/max-attributes-per-line': [
-        //     'error',
-        //     {
-        //         singleline: {
-        //             max: 2,
-        //         },
-        //         multiline: {
-        //             max: 1,
-        //         },
-        //     },
-        // ],
+        'vue/max-attributes-per-line': [
+            'error',
+            {
+                singleline: {
+                    max: 2,
+                },
+                multiline: {
+                    max: 1,
+                },
+            },
+        ],
         'vue/no-unused-components': isProduction ? 2 : 0, // 如果是生产环境，禁止未使用的组件，否则关闭此规则
         // 规定模板中 html 的缩进
         'vue/html-indent': [
@@ -92,6 +92,14 @@ module.exports = {
                 avoidEscape: false, // 不允许转义
                 allowTemplateLiterals: true, // 允许模板字符串
             },
+        ],
+        // 文件命名 - 连接
+        "filenames/match-regex": [
+          "error",
+          {
+            "regex": "^[a-zA-Z_-]+\\.(vue|ts|js|json)$",
+            "match": "KEBAB_CASE"
+          }
         ],
     },
     overrides: [
