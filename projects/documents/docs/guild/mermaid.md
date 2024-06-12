@@ -31,7 +31,18 @@ graph TD;
   C-->D;
 ```
 
-2. 序列图
+2. 思维导图
+
+``` mermaid
+mindmap
+Root
+  A
+  B
+  C
+  D
+```
+
+3. 序列图
 
 ```
 sequenceDiagram
@@ -49,7 +60,7 @@ sequenceDiagram
   John-->>-Alice: 有什么我可以帮助你的吗？
 ```
 
-3. 甘特图
+4. 甘特图
 
 ```
 gantt
@@ -73,7 +84,7 @@ gantt
     任务4           :after a1  , 12d
 ```
 
-4. 饼图
+5. 饼图
 
 ```
 pie
@@ -95,7 +106,7 @@ pie
   "Slice 5" : 10
 ```
 
-5. 类图
+6. 类图
 
 ```
 classDiagram

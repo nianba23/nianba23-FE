@@ -5,10 +5,11 @@
     "private": false,
     "workspaces": [
         "projects/*",
-        "packages/*"
+        "packages/*",
+        "demos/*"
     ],
     "scripts": {
-        "preinstall": "node ./scripts/preinstall-check-node.js && npx only-allow npm",
+        "preinstall": "node ./scripts/preinstall-check-node.js",
         "docs:dev": "npm run dev -w vitepress-doc",
         "docs:build": "npm run build -w vitepress-doc",
         "docs:serve": "npm run serve -w vitepress-doc",

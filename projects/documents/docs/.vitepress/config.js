@@ -100,6 +100,7 @@ function getCoreSidebar() {
             items: [
               { text: 'nvm', link: '/core/nvm' },
               { text: 'npm workspace', link: '/core/npm-workspace' },
+              { text: '踩坑', link: '/core/bug' }
             ],
         },
     ];

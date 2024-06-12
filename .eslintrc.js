@@ -10,7 +10,6 @@ module.exports = {
         'eslint:recommended', // eslint 官方
         'plugin:@typescript-eslint/recommended', // ts 官方
         'plugin:vue/vue3-recommended' // vue 官方
-        // '@nianba23-fe/eslint-config/onecode'
     ],
     'parser': 'vue-eslint-parser',
     'parserOptions': {
@@ -30,6 +29,8 @@ module.exports = {
     },
     'rules': {
         // 自定义项目中得规则
+        'no-useless-catch': 0,
+        '@typescript-eslint/no-explicit-any': 0,
         '@typescript-eslint/no-var-requires': 0,
         '@typescript-eslint/quotes': [
             'error',
