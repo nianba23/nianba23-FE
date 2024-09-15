@@ -2,7 +2,7 @@
 
 import { join } from 'path';
 import { existsSync } from 'fs';
-import SimplePlist from "simple-plist";
+import SimplePlist from 'simple-plist';
 import { spawn } from 'child_process';
 
 interface IAssetInfo {
@@ -66,7 +66,7 @@ function openAssetWithProgram(file: string, program: string, args?: string[]) {
                 args = [file];
             }
         }
-    
+
         const child = spawn(cmd, args, {
             detached: true,
             stdio: 'ignore',

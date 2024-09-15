@@ -2,13 +2,13 @@
 
 ### 七大基本原则
 
-在设计一些设计模式时，一版遵循以下七项基本原则：
+在设计一些设计模式时，一般遵循以下七项基本原则：
 
 1. 单一职责原则
 2. 开放-关闭原则
 3. 里氏替换原则
-4. 依赖倒转原则
-5. 接口隔离原则
+4. 接口隔离原则
+5. 依赖倒转原则
 6. 迪米特法则
 7. 组合/聚合复用原则
 
@@ -63,7 +63,7 @@ class Animal {
     }
   }
 }
-// 虽然这样修改简便了许多，但是却存在很多隐患，如果有一天需要加入某类动物不需要呼吸，那么就得行改 Animal 类的 breathe 方法，而对原有代码的修改kennel会对其他功能带来风险。
+// 虽然这样修改简便了许多，但是却存在很多隐患，如果有一天需要加入某类动物不需要呼吸，那么就得行改 Animal 类的 breathe 方法，而对原有代码的修改可能会对其他功能带来风险。
 // 这种直接在代码级别修改的方式违背了单一职责原则，虽然修改起来简单，但是隐患很大
 
 // 还有一种不修改原来代码的情况下，加入一个新的方法，这样虽然违背了单一职责原则，但是并没有修改原来的代码，不会对原来代码的功能造成影响
@@ -138,41 +138,6 @@ class B {
 // 在实际编码过程中，常常会遇到通过重写父类方法来完成新的功能，这样写起来虽然简单，但是增加了风险
 ```
 
-## 依赖倒转原则 DIP
-
-依赖倒转原则的核心思想是面向接口编程。上层模块不应该依赖低层模块，二者应该于抽象，即抽象不应该依赖于细节，细节应该依赖于抽象。
-例如一个需求需要操作数据库，负责封装数据库操作的和处理业务逻辑分别由不同同学编写，正确做法应该是处理业务逻辑的同学提供一个封装好的数据库操作的抽象接口，交给底层模块的同学去使用，这样降低耦合，双方互不影响。
-
-
-```jsx
-interface IReader {
-  getContent() {}
-}
-class Newspaper implements IReader {
-  getContent() {
-    return '这是新闻';
-  }
-}
-class Book implements IReader {
-  getContent() {
-    return '这是故事';
-  }
-}
-class Mother {
-  say(reader: IReader) {
-    console.log('开始读书');
-    console.log(reader.getContent());
-  }
-}
-class Client {
-  main() {
-    Mother mother = new Mother();
-    mother.say(new Book());
-    mother.say(new Newspaper());
-  }
-}
-```
-
 ## 接口隔离原则 ISP
 
 接口隔离原则强调使用者不应该依赖他不需要的接口，一个类对另一个类的依赖应该建立在最小的接口上。
@@ -233,6 +198,41 @@ classDiagram
 
 如果要符合接口隔离原则，就必须对接口1进行拆分。
 总结：接口隔离原则的思想在于建立单一接口，尽可能地去细化接口，接口中的方法尽可能少。但也需要有个度，如果接口设计过小则会造成接口数量过渡，使得设计复杂化。
+
+## 依赖倒转原则 DIP
+
+依赖倒转原则的核心思想是面向接口编程。上层模块不应该依赖低层模块，二者应该于抽象，即抽象不应该依赖于细节，细节应该依赖于抽象。
+例如一个需求需要操作数据库，负责封装数据库操作的和处理业务逻辑分别由不同同学编写，正确做法应该是处理业务逻辑的同学提供一个封装好的数据库操作的抽象接口，交给底层模块的同学去使用，这样降低耦合，双方互不影响。
+
+
+```jsx
+interface IReader {
+  getContent() {}
+}
+class Newspaper implements IReader {
+  getContent() {
+    return '这是新闻';
+  }
+}
+class Book implements IReader {
+  getContent() {
+    return '这是故事';
+  }
+}
+class Mother {
+  say(reader: IReader) {
+    console.log('开始读书');
+    console.log(reader.getContent());
+  }
+}
+class Client {
+  main() {
+    Mother mother = new Mother();
+    mother.say(new Book());
+    mother.say(new Newspaper());
+  }
+}
+```
 
 ## 迪米特法则 LOD
 

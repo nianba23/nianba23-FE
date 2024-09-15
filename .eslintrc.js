@@ -40,5 +40,6 @@ module.exports = {
                 'allowTemplateLiterals': true,
             },
         ],
+        'vue/comment-directive': 'off'
     }
 }
