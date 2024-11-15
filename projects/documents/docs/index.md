@@ -6,8 +6,7 @@ hero:
 #   text: Don’t forget the lessons in the dark
   tagline: Your time will come
   image:
-    src: /home.png
-  actions:
+    src: /run.png
     - theme: brand
       text: View on Github
       link: https://github.com/nianba23

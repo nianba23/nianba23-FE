@@ -206,32 +206,53 @@ classDiagram
 
 
 ```jsx
-interface IReader {
-  getContent() {}
-}
-class Newspaper implements IReader {
-  getContent() {
-    return '这是新闻';
+class EmailService {
+  sendEmail(to: string, message: string) {
+    console.log("Sending email to " + to + ": " + message);
   }
 }
-class Book implements IReader {
-  getContent() {
-    return '这是故事';
+class NotificationService {
+  private emailService;
+
+  constructor() {
+    this.emailService = new EmailService();
+  }
+
+  sendNotification(to: string, message: string) {
+    emailService.sendEmail(to, message);
   }
 }
-class Mother {
-  say(reader: IReader) {
-    console.log('开始读书');
-    console.log(reader.getContent());
+// NotificationService 直接依赖于 EmailService，这违反了依赖倒置原则。
+// 如果将来需要更换通知方式，就需要修改 NotificationService 的代码
+
+// 改进
+interface Notification {
+  send(to: string, message: string): void;
+}
+class EmailService implements Notification {
+  send(to: string, message: string): void {
+    console.log(`Sending email to ${to}: ${message}`);
   }
 }
-class Client {
-  main() {
-    Mother mother = new Mother();
-    mother.say(new Book());
-    mother.say(new Newspaper());
+
+class SmsService implements Notification {
+  send(to: string, message: string): void {
+    console.log(`Sending SMS to ${to}: ${message}`);
   }
 }
+class NotificationService {
+  private notification: Notification;
+
+  constructor(notification: Notification) {
+    this.notification = notification;
+  }
+
+  sendNotification(to: string, message: string): void {
+    this.notification.send(to, message);
+  }
+}
+// NotificationService 依赖于 Notification 接口，而不是具体的实现类。
+// 这样，如果需要更换通知方式，只需传入不同的实现类即可，无需修改 NotificationService 的代码
 ```
 
 ## 迪米特法则 LOD
