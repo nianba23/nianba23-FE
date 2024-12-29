@@ -8,7 +8,7 @@ export default withMermaid(
         themeConfig: {
             // 左上角 logo 和 title
             siteTitle: 'nianba23',
-            logo: '/logo.jpg',
+            logo: '/logo.png',
             // 社交链接
             socialLinks: [{ icon: "github", link: "https://github.com/nianba23", }],
             // 上方右侧导航
